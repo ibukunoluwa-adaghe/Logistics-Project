@@ -1,0 +1,5182 @@
+{
+	"info": {
+		"_postman_id": "6b99c64f-9c31-4435-8600-93e7dea0b87e",
+		"name": "WARENEXT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTHENTICATION",
+			"item": [
+				{
+					"name": "DRIVER AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicle = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokendriver\", vehicle);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=Demodriver1234&email=demo@driver.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "Demodriver1234"
+								},
+								{
+									"key": "email",
+									"value": "demo@driver.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MANAGER AUTH/driver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicle = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenmanager\", vehicle);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?{{password}}&{{vehiclemanageremail}}",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "{{password}}",
+									"value": null
+								},
+								{
+									"key": "{{vehiclemanageremail}}",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demo MANAGER AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicle = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokendemomanager\", vehicle);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?{{password}}&email=demo@vehiclemanager.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "{{password}}",
+									"value": null
+								},
+								{
+									"key": "email",
+									"value": "demo@vehiclemanager.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PARTNER AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicle = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenpartner\", vehicle);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=Delivery1234&email=deliverypartner@gmail.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "Delivery1234"
+								},
+								{
+									"key": "email",
+									"value": "deliverypartner@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PARTNER AUTH JD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicleJD = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenpartnerJD\", vehicleJD);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=ehinomen@43&email=jadesolaadaghe@gmail.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "ehinomen@43"
+								},
+								{
+									"key": "email",
+									"value": "jadesolaadaghe@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEMOAPPspaces AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicleapp = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokendemoapp\", vehicleapp);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=test1234&email=demo@application.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "test1234"
+								},
+								{
+									"key": "email",
+									"value": "demo@application.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WAREHOUSE AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var warehouse = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenwarehouse\", warehouse);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=test1234&email=demo@warehouse.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "test1234"
+								},
+								{
+									"key": "email",
+									"value": "demo@warehouse.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WAREHOUSE AUTH  2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var warehouse = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenwarehouse2\", warehouse);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=Ehinomen@43&email=ibukunwarehouse@gmail.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "Ehinomen@43"
+								},
+								{
+									"key": "email",
+									"value": "ibukunwarehouse@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MERCHANT AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicle = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenmerchant\", vehicle);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=test1234&email=merchant@test.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "test1234"
+								},
+								{
+									"key": "email",
+									"value": "merchant@test.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADMIN AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var token= JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenadmin\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=test1234&email=demo@admin.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "test1234"
+								},
+								{
+									"key": "email",
+									"value": "demo@admin.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MERCHANT AUTH Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicle = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenmerchantibk\", vehicle);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=ehinomen43&email=personnew774@gmail.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "ehinomen43"
+								},
+								{
+									"key": "email",
+									"value": "personnew774@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEMO MERCHANT AUTH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var warenext = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokendemomerchant\", warenext);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{authurl}}?password=test1234&email=demo@merchant.com",
+							"host": [
+								"{{authurl}}"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "test1234"
+								},
+								{
+									"key": "email",
+									"value": "demo@merchant.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "STATUS UPDATE",
+			"item": [
+				{
+					"name": "STATUS UPD with invalid jobid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 404\", function () {\r",
+									"     pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokendriver}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"jobId\":\"TRJ-oQkpgs\",\r\n\"status\":\"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/partner/jobProgessState",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"partner",
+								"jobProgessState"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MANAGER STATUS UPD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicleinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success is true\", function () {\r",
+									"  pm.expect(vehicleinfo.success).to.eql(true)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmanager}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"jobId\":\"{{jobId}}\",\r\n\"status\":\"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/partner/jobProgessState",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"partner",
+								"jobProgessState"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CONFIRM UPD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokendriver}}"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.warenext.ng/truckerJobV1/{{jobId}}",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"warenext",
+								"ng"
+							],
+							"path": [
+								"truckerJobV1",
+								"{{jobId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ASSIGN JOB DRIVER",
+			"item": [
+				{
+					"name": "create job",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is given \", function () {\r",
+									"  pm.expect(jobinfo.success).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"var jobid = JSON.parse(responseBody).jobId\r",
+									"pm.environment.set(\"jobId\", jobid);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2021\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": [\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Ikeja\",\r\n\"closestLandmark\":\"computer village\",\r\n\"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\",\r\n\"zone\": \"Ikeja\",\r\n\"coords\": {\r\n\"lat\": 6.5757504,\r\n\"lng\": 3.3510988\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n}\r\n],\r\n\"locationTo\": [\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Lekki\",\r\n\"closestLandmark\":\"The place\",\r\n\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\r\n\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\"coords\": {\r\n\"lat\": 6.4384494,\r\n\"lng\": 3.4545062\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n},\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Lekki\",\r\n\"closestLandmark\":\"K F C H H H H H H H H H H H H H H H H H HH       H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H HH H H H H H HH H H H H H H HH H H H H H H H H H H H H H H H H H H H H H H  H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H HH H H H H H HH H H H H H H H H H H H H HH H H H H H H H H H  H H H H H H H  H H H H  H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H  H H H H H H H    HH H H H H HH H\",\r\n\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\r\n\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\"coords\": {\r\n\"lat\": 6.4384494,\r\n\"lng\": 3.4545062\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n}\r\n],\r\n\"details\": {\r\n\"vehicleQuantity\": 1,\r\n\"vehicleType\": \"motorbike\",\r\n\"truckType\": \"\",\r\n\"truckWeight\": \"\",\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n},\r\n\"deliveryPartner\": [\r\n\"xZivkwgfKAamCXTb3C9m\"\r\n],\r\n\"paymentInformation\": {\r\n\"method\": \"cash\",\r\n\"status\": \"success\",\r\n\"price\": 6000\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create job multiple destinations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is given \", function () {\r",
+									"  pm.expect(jobinfo.success).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"var jobidm = JSON.parse(responseBody).jobId\r",
+									"pm.environment.set(\"jobIdmd\", jobidm);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2021\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": [\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Ikeja\",\r\n\"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\",\r\n\"zone\": \"Ikeja\",\r\n\"coords\": {\r\n\"lat\": 6.5757504,\r\n\"lng\": 3.3510988\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n}\r\n],\r\n\"locationTo\": [\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Lekki\",\r\n\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\r\n\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\"coords\": {\r\n\"lat\": 6.4384494,\r\n\"lng\": 3.4545062\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n},\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Lekki\",\r\n\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\r\n\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\"coords\": {\r\n\"lat\": 6.4384494,\r\n\"lng\": 3.4545062\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n}\r\n],\r\n\"details\": {\r\n\"vehicleQuantity\": 1,\r\n\"vehicleType\": \"motorbike\",\r\n\"truckType\": \"\",\r\n\"truckWeight\": \"\",\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n},\r\n\"deliveryPartner\": [\r\n\"xZivkwgfKAamCXTb3C9m\"\r\n],\r\n\"paymentInformation\": {\r\n\"method\": \"cash\",\r\n\"status\": \"success\",\r\n\"price\": 6000\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create job multiple pickup location",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is given \", function () {\r",
+									"  pm.expect(jobinfo.success).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"var jobidm = JSON.parse(responseBody).jobId\r",
+									"pm.environment.set(\"jobIdmp\", jobidm);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmerchant}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2021\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": [\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Ikeja\",\r\n\"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\",\r\n\"zone\": \"Ikeja\",\r\n\"coords\": {\r\n\"lat\": 6.5757504,\r\n\"lng\": 3.3510988\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n},\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Ikeja\",\r\n\"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\",\r\n\"zone\": \"Ikeja\",\r\n\"coords\": {\r\n\"lat\": 6.5757504,\r\n\"lng\": 3.3510988\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n}\r\n],\r\n\"locationTo\": [\r\n{\r\n\"address\": {\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"city\": \"Lekki\",\r\n\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\r\n\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\"coords\": {\r\n\"lat\": 6.4384494,\r\n\"lng\": 3.4545062\r\n},\r\n\"contactName\": \"ware next\",\r\n\"contactNumber\": \"+2347063560000\"\r\n},\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n}\r\n],\r\n\"details\": {\r\n\"vehicleQuantity\": 1,\r\n\"vehicleType\": \"motorbike\",\r\n\"truckType\": \"\",\r\n\"truckWeight\": \"\",\r\n\"products\": [\r\n{\r\n\"type\": \"Documents\",\r\n\"weight\": \"2\",\r\n\"quantity\": 2,\r\n\"description\": \"\"\r\n}\r\n]\r\n},\r\n\"deliveryPartner\": [\r\n\"xZivkwgfKAamCXTb3C9m\"\r\n],\r\n\"paymentInformation\": {\r\n\"method\": \"cash\",\r\n\"status\": \"success\",\r\n\"price\": 6000\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign job to a driver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfodriver = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is given \", function () {\r",
+									"  pm.expect(jobinfodriver.job_id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfodriver.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfodriver.state).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokendemomanager}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"jobId\":\"{{jobId}}\",\r\n \"driverId\":\"OvfTZuhO\", \r\n \"state\":\"accepted\", \r\n \"progressState\": \"arrived\",\r\n \"details\": {\"pickupDate\":\"2020-06-20 11:45:00\",\r\n             \"dropoffDate\":\"2020-06-20 11:45:00\", \r\n             \"reason\": \"give reason\"}\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/assignDriverJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"assignDriverJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DRIVER STATUS UPD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicleinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success is true\", function () {\r",
+									"  pm.expect(vehicleinfo.success).to.eql(true)\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokendriver}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"jobId\":\"{{jobId}}\",\r\n\"status\":\"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/partner/jobProgessState",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"partner",
+								"jobProgessState"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list driver jobs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfodriver = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(jobinfodriver.job_id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User ID is displayed \", function () {\r",
+									"  pm.expect(jobinfodriver.user_id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pickup location details is displayed \", function () {\r",
+									"  pm.expect(jobinfodriver.location_from).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Destination location details is displayed \", function () {\r",
+									"  pm.expect(jobinfodriver.location_to).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfodriver.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfodriver.state).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"reason is displayed\", function () {\r",
+									"  pm.expect(jobinfodriver.reason).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokendriver}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/driverJobs?driverId=OvfTZuhO&limit=10&offset=0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driverJobs"
+							],
+							"query": [
+								{
+									"key": "driverId",
+									"value": "OvfTZuhO"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create job (DHL partner)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is given \", function () {\r",
+									"  pm.expect(jobinfo.success).to.not.be.null\r",
+									"});\r",
+									"var jobiddhl = JSON.parse(responseBody).jobId\r",
+									"pm.environment.set(\"jobIDdhl\", jobiddhl);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmerchant}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2020\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": {\r\n    \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"lekki\",\r\n    \"address\": \"address\",\r\n  \"contactName\": \"ware next\",\r\n  \"contactNumber\": \"+2347063560000\"\r\n  },\r\n\"locationTo\": {\r\n   \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"ikeja\",\r\n   \"address\": \"address\",\r\n   \"contactName\": \"ware next\",\r\n   \"contactNumber\": \"+2347063560000\"\r\n},\r\n\"documents\": [],\r\n\"details\": {\r\n   \"productQuantity\": 7,\r\n   \"vehicleQuantity\": 3,\r\n   \"vehicleType\": \"truck\",\r\n   \"truckType\": \"openSidedTrailer\",\r\n  \"truckWeight\": \"10TonneTruck\",\r\n  \"productWeight\": \"1000 Kg\",\r\n   \"productType\": \"Heavy Package\",\r\n   \"productDescription\": \"Desription text\",\r\n\"products\": [\r\n               {\r\n                \"type\": \"Heavy Package\",\r\n                \"weight\": 5,\r\n                \"quantity\": 2,\r\n                \"name\": \"bags\",\r\n                \"description\": \"description\",\r\n                \"variant\": \"variant 2\"\r\n                }\r\n            ]\r\n },\r\n\t\"deliveryPartner\": [\"aRbEWt5glOcodzRTYMSe\"],\r\n\t \"paymentInformation\": {\r\n\t},\r\n\"partnerDeliveryCode\":\"N\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job details (DHL)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.job_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.user_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pickup location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationFrom).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Destination location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationTo).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfo.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfo.logisticPartner.state).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmerchant}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobV1/{{jobIDdhl}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobV1",
+								"{{jobIDdhl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list jobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/admin/truckerjob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"admin",
+								"truckerjob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload offline job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n{\r\n\"pickupLocationCity\": \"Yaba\",\r\n\"pickupAddress\": \"24 yaba road\",\r\n\"pickupContactPhoneNumber\": \"08037909777\",\r\n\"pickupContactName\": \"Tunji\",\r\n\"productQuantity\": 10,\r\n\"productDescription\": \"Cake\",\r\n\"deliveryAddress\": \"Surelere stadium\",\r\n\"deliveryLocationCity\": \"Surelere\",\r\n\"deliveryContactPhoneNumber\": \"08037909777\",\r\n\"deliveryContactName\": \"Ibukun\",\r\n\"vehicleType\": \"car\",\r\n\"partnerId\": \"VV8Pc8oGkzSobUMVxtQu\",\r\n\"merchantId\": \"4KBq4RMsYT8p71G0Z3wV\",\r\n\"pickupDate\": \"2020-02-04\",\r\n\"costPrice\": \"2000\",\r\n\"productWeight\": 10,\r\n\"productType\": \"document\",\r\n\"pickupTime\": \"12:10\"\r\n}\r\n]"
+						},
+						"url": {
+							"raw": "{{baseurl}}/admin/upload/jobs",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"admin",
+								"upload",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UPDATE JOB PROGRESS STATE AND SHIPMENT",
+			"item": [
+				{
+					"name": "update job progress state",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobstate = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success message is dispalyed and it is equal to boolean \", function () {\r",
+									"  pm.expect(jobstate.success).to.be.true\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmanager}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobId\":\"TRJ-D7GVec\",\r\n    \"status\":\"delivered\",\r\n    \"images\": \"[base64:data:image/jpg;base64]\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/partner/jobProgessState",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"partner",
+								"jobProgessState"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shipment pricing(valid LP)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var shipment = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Partner ID is displayed \", function () {\r",
+									"  pm.expect(shipment.partnerId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Partner name is displayed \", function () {\r",
+									"  pm.expect(shipment.partnerName).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Shipment price is displayed \", function () {\r",
+									"  pm.expect(shipment.price).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The comment is displayed \", function () {\r",
+									"  pm.expect(shipment.comment).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2020\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": {\r\n\"country\":\"Nigeria\",\r\n\"state\":\"Lagos\",\r\n\"city\":\"Ibeju Lekki/Epe\",\r\n\"zone\":\"Ibeju Lekki/Epe\",\r\n\"address\":\"Address\"\r\n},\r\n\"locationTo\":{\r\n\"country\":\"Nigeria\",\r\n\"state\":\"Lagos\",\r\n\"city\":\"Ikeja\",\r\n\"zone\":\"Ikeja\",\r\n\"address\":\"Address\"\r\n},\r\n\"details\":{\r\n\"vehicleType\":\"car\"\r\n},\r\n \"deliveryPartner\": [\"K5YDXieTmXwQL7eABgtt\"],\r\n\t \"paymentInformation\": {\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/getShipmentPricing",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"getShipmentPricing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active partners",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var partners = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Partner ID is displayed \", function () {\r",
+									"  pm.expect(partners.list.userId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Partner rating is displayed \", function () {\r",
+									"  pm.expect(partners.list.rating).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Partner name is displayed \", function () {\r",
+									"  pm.expect(partners.list.name).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": \r\n       {\r\n        \"origin\" : \r\n           { \"country\": \"NG\", \r\n             \"state\": \"Lagos\", \r\n             \"city\": \"Lagos\" \r\n           },\r\n        \"destination\": \r\n           { \"country\": \"NG\", \r\n             \"state\": \"Lagos\", \r\n             \"city\": \"Lagos\" \r\n           }\r\n        },\r\n    \"shipmentInfo\": [\r\n                     { \"quantity\": 2, \r\n                       \"weight\": 10 \r\n                     },\r\n                     { \"quantity\": 5, \r\n                       \"weight\": 7 \r\n                     }\r\n                    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/user/activeVehicleManagers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user",
+								"activeVehicleManagers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shipment pricing (public)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var shipment = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Partner ID is displayed \", function () {\r",
+									"  pm.expect(shipment.partnerId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Partner name is displayed \", function () {\r",
+									"  pm.expect(shipment.partnerName).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Shipment price is displayed \", function () {\r",
+									"  pm.expect(shipment.price).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The comment is displayed \", function () {\r",
+									"  pm.expect(shipment.comment).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2020\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": {\r\n\"country\":\"Nigeria\",\r\n\"state\":\"Lagos\",\r\n\"city\":\"Ibeju Lekki/Epe\",\r\n\"zone\":\"Ibeju Lekki/Epe\",\r\n\"address\":\"Address\"\r\n},\r\n\"locationTo\":{\r\n\"country\":\"Nigeria\",\r\n\"state\":\"Lagos\",\r\n\"city\":\"Ikeja\",\r\n\"zone\":\"Ikeja\",\r\n\"address\":\"Address\"\r\n},\r\n\"details\":{\r\n\"vehicleType\":\"car\"\r\n},\r\n \"deliveryPartner\": [\"K5YDXieTmXwQL7eABgtt\"],\r\n\t \"paymentInformation\": {\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/public/getShipmentPricing",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"public",
+								"getShipmentPricing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shipment pricing (public) Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var shipment = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Partner ID is displayed \", function () {\r",
+									"  pm.expect(shipment.partnerId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Partner name is displayed \", function () {\r",
+									"  pm.expect(shipment.partnerName).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Shipment price is displayed \", function () {\r",
+									"  pm.expect(shipment.price).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The comment is displayed \", function () {\r",
+									"  pm.expect(shipment.comment).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"locationFrom\": [ { \"country\": \"Nigeria\", \"state\": \"Lagos\",\"city\": \"Ikeja\", \"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\", \"zone\": \"Ikeja\", \"coords\": { \"lat\": 6.4352756, \"lng\": 3.4147873 } } ], \"locationTo\": [ { \"country\": \"Nigeria\", \"state\": \"Lagos\", \"city\": \"Lekki\", \"address\": \"33 Bisola Durosinmi Etti Drive, Lekki, Nigeria\", \"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\", \"coords\": { \"lat\": 6.4561505, \"lng\": 3.4298537 } } ], \"details\": { \"vehicleQuantity\": 1, \"vehicleType\": \"motorbike\", \"truckType\": \"\", \"truckWeight\": \"\", \"products\": [ { \"type\": \"Documents\", \"weight\": \"2\", \"quantity\": 1, \"description\": \"\"}] }}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/public/getShipmentPricing",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"public",
+								"getShipmentPricing"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOGISTIC PARTNER",
+			"item": [
+				{
+					"name": "list trucker available jobs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.job_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.user_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pickup location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationFrom).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Destination location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationTo).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfo.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"reason is displayed\", function () {\r",
+									"  pm.expect(jobinfo.reason).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfo.state).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Details of the logistics partner assigned to the job is displayed \", function () {\r",
+									"  pm.expect(jobinfo.logisticPartner).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobV1/AvailableJobs?driverId=OvfTZuhO&limit=10&offset=0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobV1",
+								"AvailableJobs"
+							],
+							"query": [
+								{
+									"key": "driverId",
+									"value": "OvfTZuhO"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create job to be accepted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is given \", function () {\r",
+									"  pm.expect(jobinfo.success).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"var jobid = JSON.parse(responseBody).jobId\r",
+									"pm.environment.set(\"jobIdaccept\", jobid);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmerchant}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2020\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": {\r\n    \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"Lekki\",\r\n    \"address\": \"address\",\r\n  \"contactName\": \"ware next\",\r\n  \"contactNumber\": \"+2347063560000\"\r\n  },\r\n\"locationTo\": {\r\n   \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"Lekki\",\r\n   \"address\": \"address\",\r\n   \"contactName\": \"ware next\",\r\n   \"contactNumber\": \"+2347063560000\"\r\n},\r\n\"documents\": [],\r\n\"details\": {\r\n   \"productQuantity\": 7,\r\n   \"vehicleQuantity\": 3,\r\n   \"vehicleType\": \"truck\",\r\n   \"truckType\": \"openSidedTrailer\",\r\n  \"truckWeight\": \"10TonneTruck\",\r\n  \"productWeight\": \"1000 Kg\",\r\n   \"productType\": \"Heavy Package\",\r\n   \"productDescription\": \"Desription text\",\r\n\"products\": [{\"type\": \"Heavy Packag\",\"weight\": 5,\"quantity\": 2,\"name\": \"name of product\",\"description\": \"description\", \"variant\": \"variant 2\"}]\r\n },\r\n\t\"deliveryPartner\": [\"K5YDXieTmXwQL7eABgtt\"],\r\n\t \"paymentInformation\": {\r\n\t},\r\n\"partnerDeliveryCode\":\"N\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept job",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var acceptjob = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success message is displayed and to equal Job ID \", function () {\r",
+									"  pm.expect(acceptjob.success).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokendemomanager}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/partner/{{jobIdaccept}}?action=accept&reason=i accept",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"partner",
+								"{{jobIdaccept}}"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "accept"
+								},
+								{
+									"key": "reason",
+									"value": "i accept"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decline job",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var declinejob = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success message is displayed and to equal Job ID \", function () {\r",
+									"  pm.expect(declinejob.success).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenpartner}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/partner/{{jobId}}?action=decline&reason=i dont know",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"partner",
+								"{{jobId}}"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "decline"
+								},
+								{
+									"key": "reason",
+									"value": "i dont know"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.job_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.user_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pickup location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationFrom).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Destination location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationTo).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfo.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfo.logisticPartner.state).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenpartner}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobV1/{{jobId}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobV1",
+								"{{jobId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create job Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is given \", function () {\r",
+									"  pm.expect(jobinfo.success).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"var jobid = JSON.parse(responseBody).jobId\r",
+									"pm.environment.set(\"jobIdcopy\", jobid);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmerchant}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2020\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": {\r\n    \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"lekki\",\r\n    \"address\": \"address\",\r\n  \"contactName\": \"ware next\",\r\n  \"contactNumber\": \"+2347063560000\"\r\n  },\r\n\"locationTo\": {\r\n   \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"ikeja\",\r\n   \"address\": \"address\",\r\n   \"contactName\": \"ware next\",\r\n   \"contactNumber\": \"+2347063560000\"\r\n},\r\n\"documents\": [],\r\n\"details\": {\r\n   \"productQuantity\": 7,\r\n   \"vehicleQuantity\": 3,\r\n   \"vehicleType\": \"truck\",\r\n   \"truckType\": \"openSidedTrailer\",\r\n  \"truckWeight\": \"10TonneTruck\",\r\n  \"productWeight\": \"1000 Kg\",\r\n   \"productType\": \"Heavy Package\",\r\n   \"productDescription\": \"Desription text\",\r\n\"products\": [\r\n               {\r\n                \"type\": \"Heavy Package\",\r\n                \"weight\": 5,\r\n                \"quantity\": 2,\r\n                \"name\": \"bags\",\r\n                \"description\": \"description\",\r\n                \"variant\": \"variant 2\"\r\n                }\r\n            ]\r\n },\r\n\t\"deliveryPartner\": [\"K5YDXieTmXwQL7eABgtt\"],\r\n\t \"paymentInformation\": {\r\n\t},\r\n\"partnerDeliveryCode\":\"N\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update job status(cancel job)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 204\", function () {\r",
+									"     pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/status?state=deleted&jobId={{jobIdcopy}}&reason=wrong shipment",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"status"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "deleted"
+								},
+								{
+									"key": "jobId",
+									"value": "{{jobIdcopy}}"
+								},
+								{
+									"key": "reason",
+									"value": "wrong shipment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job details Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.job_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.user_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pickup location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationFrom).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Destination location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationTo).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfo.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"reason is displayed\", function () {\r",
+									"  pm.expect(jobinfo.reason).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfo.state).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmerchant}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobV1/{{jobIdcopy}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobV1",
+								"{{jobIdcopy}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partner earnings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var stats = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Shipments in transit is displayed \", function () {\r",
+									"  pm.expect(stats.shipmentsInTransit).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Shipments pending is displayed \", function () {\r",
+									"  pm.expect(stats.shipmentsPending).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Total earned is displayed \", function () {\r",
+									"  pm.expect(stats.totalEarned).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Total shipments is displayed \", function () {\r",
+									"  pm.expect(stats.shipmentsTotal).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Shipments completed is displayed \", function () {\r",
+									"  pm.expect(stats.shipmentsCompleted).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenadmin}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/logisticPartner/sdw8uNqOiv0p5wipv5nu",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"logisticPartner",
+								"sdw8uNqOiv0p5wipv5nu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete document",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmanager}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"docLink\":\"https://warenext-cdn.s3.eu-central-1.amazonaws.com/kyc/VV8Pc8oGkzSobUMVxtQu_2700717905.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/user/deleteSupportDocument",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user",
+								"deleteSupportDocument"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get logistics partner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list logistics partner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/logisticPartners?limit=400&offset=0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"logisticPartners"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "400"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logistics partner details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/logisticPartner/:userId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"logisticPartner",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "K5YDXieTmXwQL7eABgtt",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Either accepts or declines job submitted by user ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PRICE MATRIX",
+			"item": [
+				{
+					"name": "price matrix",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var prices = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Country is displayed \", function () {\r",
+									"  pm.expect(prices.country).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"State is displayed \", function () {\r",
+									"  pm.expect(prices.state).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Zone from is displayed \", function () {\r",
+									"  pm.expect(prices.zoneFrom).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Zone To (destinations) with prices are displayed \", function () {\r",
+									"  pm.expect(prices.zoneTo).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmanager}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/vehicleManager/getPriceMatrix",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"vehicleManager",
+								"getPriceMatrix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update price matrix",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var priceinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success message is dispalyed and it is equal to boolean \", function () {\r",
+									"  pm.expect(priceinfo.success).to.be.true\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmanager}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"country\": \"Nigeria\",\r\n\t\"state\": \"Lagos\",\r\n\t\"currency\": \"NG\",\r\n\t\"zoneFrom\": \"Agungi/Ajah/Awoyaya\",\r\n\t\"zoneTo\": {\r\n \t\"country\": \"Nigeria\",\r\n\t\t\"state\": \"Lagos\",\r\n\t\t\"zoneTo\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\t\t\"price\": {\r\n\t\t\t\"motorbike\": 1000,\r\n\t\t\t\"car\": 1000\r\n\t\t}\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/vehicleManager/updatePriceMatrix",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"vehicleManager",
+								"updatePriceMatrix"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER ACCOUNTS/DETAILS",
+			"item": [
+				{
+					"name": "update user accounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 204\", function () {\r",
+									"     pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenpartner}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"basics\": {\r\n        \"language\": \"en\",\r\n        \"profileCompletion\": 100,\r\n        \"profileCompletionMissingFields\": [],\r\n        \"userId\": \"K5YDXieTmXwQL7eABgtt\",\r\n        \"profileId\": \"matt-partner_K5YDXieTmXwQL7eABgtt\",\r\n        \"email\": \"deliverypartner@gmail.com\",\r\n        \"referralId\": \"UMPQ-Erg4\",\r\n        \"firstName\": \"Matt\",\r\n        \"username\": \"Matt  Partner\",\r\n        \"lastName\": \"Partner\",\r\n        \"telephone\": \"+234 8065400000\",\r\n        \"country\": \"NG\"\r\n        \r\n    },\r\n    \"images\": {\r\n        \"profilePhoto\": {},\r\n        \"businessPhoto\": {\r\n\"data\" : \"data:image/jpeg;base64,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\",\r\n\"x\":1,\r\n\"y\":4,\r\n\"w\":50,\r\n\"h\":50\r\n}\r\n    },\r\n    \"access\": {\r\n        \"roleId\": 500,\r\n        \"roleName\": \"vehicleManager\",\r\n        \"isActive\": true\r\n    },\r\n    \"notifications\": {\r\n        \"newsletter\": true\r\n    },\r\n    \"stats\": {\r\n        \"shipmentsInTransit\": 0,\r\n        \"shipmentsPending\": 1,\r\n        \"totalEarned\": 0,\r\n        \"shipmentsTotal\": 1\r\n    },\r\n    \"driver\": {\r\n        \"driverLocation\": []\r\n    },\r\n    \"bankDetails\": {\r\n        \"bank\": \"Standard Chartered\",\r\n        \"accountName\": \"logistics\",\r\n        \"accountNumber\": \"0998785936\"\r\n    },\r\n    \"truckDriver\": {\r\n        \"photos\": [],\r\n        \"truckType\": \"motorbike\",\r\n        \"chassisNumber\": \"\",\r\n        \"registrationNumber\": \"\",\r\n        \"driversLicenceNumber\": \"\"\r\n    },\r\n    \"logisticsPartner\": {\r\n        \"CACRegistration\": \"876534567\",\r\n        \"TAXNumber\": \"6578\",\r\n        \"GIT\": \"87656\",\r\n        \"businessEmail\": \"business@gmail.com\",\r\n        \"businessName\": \"businesswork\",\r\n        \"location\": \"lagos\",\r\n        \"telephone\": \"+234 8065400000\",\r\n        \"supportingDocuments\": \"https://warenext-cdn.s3.eu-central-1.amazonaws.com/kyc/K5YDXieTmXwQL7eABgtt_6171885069.pdf\",\r\n        \"isActive\": true\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/user",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "basic details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var bankinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"User basics are displayed \", function () {\r",
+									"  pm.expect(bankinfo.basics).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Bank name is displayed \", function () {\r",
+									"  pm.expect(bankinfo.bankDetails.bank).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Account name is displayed \", function () {\r",
+									"  pm.expect(bankinfo.bankDetails.accountName).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Account number is displayed \", function () {\r",
+									"  pm.expect(bankinfo.bankDetails.accountNumber).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Logistics partner details are displayed \", function () {\r",
+									"  pm.expect(bankinfo.logisticsPartner).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/user/basic",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user",
+								"basic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create inventory items bulk",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"file\":{\r\n\"data\": \"data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,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\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/inventory/merchant/bulk",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"inventory",
+								"merchant",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get inventory merchant list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/inventory/merchant",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"inventory",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELIVERY",
+			"item": [
+				{
+					"name": "zones",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var zonesinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"country is displayed \", function () {\r",
+									"  pm.expect(zonesinfo.country).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"state is displayed \", function () {\r",
+									"  pm.expect(zonesinfo.state).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"zone is displayed \", function () {\r",
+									"  pm.expect(zonesinfo.zone).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Whether it delivers is stated and is equal to boolean \", function () {\r",
+									"  pm.expect(zonesinfo.success).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/zones",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"zones"
+							]
+						},
+						"description": "get the zone where the delivery partner delivers to"
+					},
+					"response": []
+				},
+				{
+					"name": "set zones",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var zoneinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success message is dispalyed and it is equal to boolean \", function () {\r",
+									"  pm.expect(zoneinfo.success).to.be.true\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"country\": \"Nigeria\",\r\n\"state\": \"Lagos\",\r\n\"zone\": \"Ibeju Lekki/Epe\",\r\n\"delivers\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/zone",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"zone"
+							]
+						},
+						"description": "to set the zones you are shipping to"
+					},
+					"response": []
+				},
+				{
+					"name": "create order ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var orderinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job status is successful \", function () {\r",
+									"  pm.expect(orderinfo.status).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"var orderN = JSON.parse(responseBody).orderNumber\r",
+									"pm.environment.set(\"orderNumber\", orderN);\r",
+									"\r",
+									"var waybillN = JSON.parse(responseBody).waybillNumber\r",
+									"pm.environment.set(\"waybillNumber\", waybillN);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\"provider\": \"WareNextNg\",\r\n\"partnerDeliveryCode\": \"sdw8uNqOiv0p5wipv5nu\",\r\n\"description\": \"Phone for a friend\",\r\n\"location\": {\r\n\"origin\": {\r\n\"city\": \"Victoria Island\",\r\n\"state\": \"LAGOS\",\r\n\"address\": \"3b Tiamiyu Savage St\", \"name\": \"Mike Brown\",\r\n\"email\": \"mike@test.com\", \"phone\": \"111-222-333\",\r\n\"country\": \"Nigeria\"\r\n},\r\n\"destination\": {\r\n\"city\": \"LAGOS ISLAND\",\r\n\"state\": \"LAGOS\",\r\n\"town\": \"DUGBE\", \"address\": \"Heritage Mall, 1st floor\",\r\n\"name\": \"Jack Green\", \"email\": \"jack@test.com\", \"phone\": \"+447503402851\",\r\n\"country\": \"Nigeria\"\r\n}\r\n},\r\n\"shipmentInfo\": [\r\n{\r\n\"quantity\": 10, \"weight\": 2,\r\n\"name\": \"jade\", \"description\": \"none\", \"variant\": \"5\",\r\n\"params\": { \"size\": \"1\" }\r\n}\r\n]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/delivery",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"delivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "track order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/delivery/track/{{orderNumber}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"delivery",
+								"track",
+								"{{orderNumber}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.job_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.user_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pickup location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationFrom).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Destination location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationTo).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfo.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfo.logisticPartner.state).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmanager}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobV1/{{waybillNumber}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobV1",
+								"{{waybillNumber}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delivery rating",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var delivery = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success is true\", function () {\r",
+									"  pm.expect(delivery.success).to.eql(true)\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"jobId\": \"TRJ-W18DAa\", \"review\": 5,\"comment\": \"excellent\"}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/reviews",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list of ratings MERCHANT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var deliveryrating = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Merchant ID is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.merchantId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Partner ID is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.partnerId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Rating value is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.rating).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.jobId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The comment is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.comment).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/reviews?limit=20&offset=0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list of ratings PARTNER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var deliveryrating = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Merchant ID is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.merchantId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Partner ID is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.partnerId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Rating value is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.rating).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.jobId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The comment is displayed \", function () {\r",
+									"  pm.expect(deliveryrating.comment).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/reviews",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delivery prices",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokendemoapp}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"location\": {\r\n\t\t\"origin\" : { \"country\": \"NG\", \"state\": \"Lagos\", \"city\": \"yaba\" },\r\n\t\t\"destination\": { \"country\": \"NG\", \"state\": \"lagos\", \"city\": \"yaba\" }\r\n\t},\r\n\t\"shipmentInfo\": [\r\n\t\t{ \"quantity\": 2, \"weight\": 10 },\r\n\t\t{ \"quantity\": 5, \"weight\": 7 }\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/delivery/prices",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"delivery",
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get delivery locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/delivery/locations",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"delivery",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EMAIL",
+			"item": [
+				{
+					"name": "User Signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var vehicles = JSON.parse(responseBody).accessToken\r",
+									"pm.environment.set(\"authtokenvmanager\", vehicles);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"jaypeeeadaghe@gmail.com\",\r\n\"password\":\"ehinomen@43\",\r\n\"type\":\"vehicleManager\",\r\n\"firstName\":\"jaypeee\",\r\n\"lastName\":\"Adaghe\",\r\n\"country\":\"NG\",\r\n\"telephone\":\"+234 8063543837\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/user/signup",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create truckerjob",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var truckerjob = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(truckerjob.jobId).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchantibk}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"pickupDate\": \"12/12/2020\",\r\n\"pickupTime\": \"12:02 AM\",\r\n\"locationFrom\": {\r\n    \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"lekki\",\r\n    \"address\": \"address\",\r\n  \"contactName\": \"ware next\",\r\n  \"contactNumber\": \"+2347063560000\"\r\n  },\r\n\"locationTo\": {\r\n   \"country\": \"Nigeria\",\r\n   \"state\": \"Lagos\",\r\n   \"city\": \"lagos\",\r\n   \"zone\": \"ikeja\",\r\n   \"address\": \"address\",\r\n   \"contactName\": \"ware next\",\r\n   \"contactNumber\": \"+2347063560000\"\r\n},\r\n\"documents\": [],\r\n\"details\": {\r\n   \"productQuantity\": 7,\r\n   \"vehicleQuantity\": 3,\r\n   \"vehicleType\": \"truck\",\r\n   \"truckType\": \"openSidedTrailer\",\r\n  \"truckWeight\": \"10TonneTruck\",\r\n  \"productWeight\": \"1000 Kg\",\r\n   \"productType\": \"Heavy Package\",\r\n   \"productDescription\": \"Desription text\",\r\n\"products\": [\r\n               {\r\n                \"type\": \"Heavy Package\",\r\n                \"weight\": 5,\r\n                \"quantity\": 2,\r\n                \"name\": \"bags\",\r\n                \"description\": \"description\",\r\n                \"variant\": \"variant 2\"\r\n                }\r\n            ]\r\n },\r\n\t\"deliveryPartner\": [\"K5YDXieTmXwQL7eABgtt\"],\r\n\t \"paymentInformation\": {\r\n\t},\r\n\"partnerDeliveryCode\":\"N\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DRIVER",
+			"item": [
+				{
+					"name": "create ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var id = JSON.parse(responseBody).id\r",
+									"pm.environment.set(\"driverId\", id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmanager}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"topemiposi\",\r\n    \"email\":\"topemiposidriver@email.com\",\r\n    \"telephone\":\"09060800609\",\r\n    \"licenseNumber\":\"GH1118U234\",\r\n    \"image\":\"base 64 string\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/driver",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var license = JSON.parse(responseBody).driverLicense\r",
+									"pm.environment.set(\"driverlicencense\", license);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokendriver}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/driver/{{driverId}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driver",
+								"{{driverId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update job status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 204\", function () {\r",
+									"     pm.response.to.have.status(204);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmanager}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\":\"shipmentOngoing\", \r\n    \"jobId\":\"{{waybillNumber}}\", \r\n    \"reason\" : \"on my way\",\r\n    \"missingItems\": \r\n            [{ \"type\": \"clothes\", \r\n               \"weight\":\"20\", \r\n               \"quantity\": \"5\"\r\n            }],\r\n    \"availableItems\": [{\r\n               \"type\": \"clothes\", \r\n               \"weight\":\"20\", \r\n               \"quantity\": \"10\"\r\n            }], \r\n    \"isItemComplete\":\"false\", \r\n    \"itemsCount\": \"15\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/status",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VEHICLEDRIVER",
+			"item": [
+				{
+					"name": "create driver Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var id = JSON.parse(responseBody).id\r",
+									"pm.environment.set(\"driverId2\", id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmanager}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"johnn\",\r\n    \"email\":\"johnndriver@email.com\",\r\n    \"telephone\":\"09030772601\",\r\n    \"licenseNumber\":\"KT414000S4\",\r\n    \"image\":\"base 64 string\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/driver",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details driverCopy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"var license = JSON.parse(responseBody).driverLicense\r",
+									"pm.environment.set(\"driverlicense2\", license);\r",
+									"\r",
+									"var driverdetails = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Driver ID is displayed \", function () {\r",
+									"  pm.expect(driverdetails.driver_id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Driver name is displayed \", function () {\r",
+									"  pm.expect(driverdetails.driverName).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Driver email is displayed \", function () {\r",
+									"  pm.expect(driverdetails.driverEmail).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Driver phone number is displayed \", function () {\r",
+									"  pm.expect(driverdetails.driverPhoneNumber).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Driver status is displayed and boolean \", function () {\r",
+									"  pm.expect(driverdetails.isActive).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Driver vehicle details is displayed \", function () {\r",
+									"  pm.expect(driverdetails.vehicle).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokendriver}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/driver/{{driverId2}}",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driver",
+								"{{driverId2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list trucker available jobs Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var jobinfo = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Job ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.job_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User ID is displayed \", function () {\r",
+									"  pm.expect(jobinfo.user_Id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pickup location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationFrom).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Destination location details is displayed \", function () {\r",
+									"  pm.expect(jobinfo.locationTo).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job Details is given \", function () {\r",
+									"  pm.expect(jobinfo.details).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"reason is displayed\", function () {\r",
+									"  pm.expect(jobinfo.reason).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Job state is displayed \", function () {\r",
+									"  pm.expect(jobinfo.state).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Details of the logistics partner assigned to the job is displayed \", function () {\r",
+									"  pm.expect(jobinfo.logisticPartner).to.not.be.null\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobV1/AvailableJobs?driverId=OvfTZuhO&limit=10&offset=0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobV1",
+								"AvailableJobs"
+							],
+							"query": [
+								{
+									"key": "driverId",
+									"value": "OvfTZuhO"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign vehicle to driver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var drivers = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Driver ID is displayed \", function () {\r",
+									"  pm.expect(drivers.id).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmanager}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"driverId\":\"{{driverId2}}\",\r\n    \"vehicleId\":\"gnXjUptw\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/driverVehicle",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driverVehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unassign vehicle to driver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 204\", function () {\r",
+									"     pm.response.to.have.status(204);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmanager}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicleId\":\"gnXjUptw\",\r\n    \"driverId\":\"{{driverId2}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/driverVehicle",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driverVehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disable driver",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenmanager}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"driverId\":\"{{driverId2}}\",\r\n    \"driverLicense\":\"{{driverlicense2}}\", \r\n    \"status\":\"offline\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/driver/toggleStatus",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"driver",
+								"toggleStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list vehicles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/vehicles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload driver vehicle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var uploaddriver = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"Success message is dispalyed and it is equal to boolean \", function () {\r",
+									"  pm.expect(uploaddriver.success).to.be.true\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenpartner}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\"vehicleOnly\": false,\r\n\"driverOnly\": false,\r\n\"DriverWithVehicle\": true,\r\n\"data\": [\r\n{\r\n\"vehicleType\":\"van\",\r\n\"status\": \"active\",\r\n\"registrationNumber\": \"1234567\",\r\n\"chassisNumber\": \"chasss21\",\r\n\"driverEmail\":\"beatrice@test.com\",\r\n\"driveName\": \"beatrice\",\r\n\"driverPhoneNumber\": \"08063543837\",\r\n\"driverLicense\": \"KT992817U\"\r\n},\r\n{\r\n\"vehicleType\":\"van\",\r\n\"status\": \"active\",\r\n\"registrationNumber\": \"1226655\",\r\n\"chassisNumber\": \"chasss213\",\r\n\"driverEmail\":\"nkechi@test.com\",\r\n\"driveName\": \"nkechi\",\r\n\"driverPhoneNumber\": \"08063543837\",\r\n\"driverLicense\": \"SS99281KB\"\r\n}\r\n]\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/uploadDriversVehicles",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"uploadDriversVehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list drivers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/admin/list-drivers",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"admin",
+								"list-drivers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WAREHOUSE",
+			"item": [
+				{
+					"name": "PALLET STORAGE",
+					"item": [
+						{
+							"name": "add contents without tracking inventory",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Valid response with status code 204\", function () {\r",
+											"     pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authtokenwarehouse}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"goods\":{\"typeOfGoods\":\"electronics\"},\r\n    \"inventory\":[],\r\n    \"sqm\":20,\r\n    \"state\":\"merchantContentsAdded\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/palletStorage/PALLET-EXIEOPBJRE",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"palletStorage",
+										"PALLET-EXIEOPBJRE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add contents with tracking inventory",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Valid response with status code 204\", function () {\r",
+											"     pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authtokenwarehouse}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"goods\":\r\n    {\"typeOfGoods\":\"electronics\"},\r\n \"inventory\":[{\r\n    \"itemId\":\"INVpOX-qQS-Xty\",\r\n    \"length\": 20, \r\n    \"width\": 10, \r\n    \"height\":15, \r\n    \"itemQuantity\":\"2\",\r\n    \"maxQuantity\":2,\r\n    \"serialNumbers\":[\"sf-fsfwwe\"]}],\r\n \"state\":\"merchantContentsAdded\",\r\n \"sqm\":20,\r\n \"origin\": {\"country\": \"Nigeria\", \"state\": \"Lagos\", \"city\": \"yaba\",\"address\": \"3b Tiamiyu Savage St\"},\r\n \"supportingDocuments\": [\"\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/palletStorage/PALLET-EXIEOPBJRE",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"palletStorage",
+										"PALLET-EXIEOPBJRE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mark as shipped",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Valid response with status code 204\", function () {\r",
+											"     pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authtokenwarehouse}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"state\":\"merchantShipped\",\r\n\"supportingDocuments\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/palletStorage/PALLET-EXIEOPBJRE",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"palletStorage",
+										"PALLET-EXIEOPBJRE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mark as received",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Valid response with status code 204\", function () {\r",
+											"     pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authtokenwarehouse}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"state\":\"warehouseReceived\",\r\n\"supportingDocuments\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/palletStorage/PALLET-EXIEOPBJRE",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"palletStorage",
+										"PALLET-EXIEOPBJRE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mark as stored",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Valid response with status code 204\", function () {\r",
+											"     pm.response.to.have.status(204);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authtokenwarehouse}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"state\":\"warehouseStored\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/palletStorage/PALLET-EXIEOPBJRE",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"palletStorage",
+										"PALLET-EXIEOPBJRE"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pallet inventory",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authtokenmerchant}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseurl}}/palletStorage/inventory",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"palletStorage",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "RATINGS AND REVIEWS",
+					"item": [
+						{
+							"name": "write reviews",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{authtokenpartner}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"warehouseId\": \"r7Ah-EL\",\r\n    \"rating\": 5,\r\n    \"title\": \"Good Storage\",\r\n    \"review\": \"Very nice warehouse\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/reviews/warehouse",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"reviews",
+										"warehouse"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get reviews info",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"*The rating requires 3 fields:\r",
+											"-the number of stars given (number between 1 and 5)\r",
+											"-A title for the review (0 to 50 characters long)\r",
+											"-the review text (0 to 1024 characters long)\r",
+											"This should be stored in the DB keeping track of:\r",
+											"-the date submitted\r",
+											"-the merchant userId that submitted it\r",
+											"-and warehouse ID it is meant for."
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authtokenwarehouse}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseurl}}/reviews/warehouse/:warehouseId",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"reviews",
+										"warehouse",
+										":warehouseId"
+									],
+									"variable": [
+										{
+											"key": "warehouseId",
+											"value": "Fgv3-TG",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "create warehouse",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var Warehouse = JSON.parse(responseBody).warehouseId\r",
+									"pm.environment.set(\"warehouseID\", Warehouse);\r",
+									"\r",
+									"\r",
+									"aWLC-E2"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenwarehouse2}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"location\":{\"country\":\"NG\",\"state\":\"Lagos\",\"city\":\"Lagos\",\"address\":\"Station road\",\"number\":\"16\",\"lat\": 200,\"lng\": 300},\"properties\":{\"zones\":3,\"sections\":8},\"services\":[\"fulfillment\"],\"goodTypes\": [],\"pricing\": {\"currency\": \"ngn\",\"service\": \"squareMeterStorage\",\"exactPrice\": \"12345\"},\"images\":{\"upload\":[{\"file\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAklEQVR4AewaftIAAAKnSURBVO3Bia0lRgEEwJ7W5J8JIZAASYEEAsl4G9brf7yjqs7f/vLXvwf4oQaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYGmBqgKkBpgaYbk54Eyf8UTc8pRO+wg1f7oRnccOHOeHV3PA7J/AvN2/mBH7ezQs4gc9x8wRO4HvckxPgxxpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmG5O4DdO+Lcb3tIJP+OGl3fCr7rhZZzw0W54Wid8thse3gnf5YaHc8KjuOFbnfDIbvhSJzyTGz7NCc/uhg9zwqu54Zed8Opu+GknvJsbphPe3Q3/cQK/dfPGTuB/u3kzJ/Dzbt7ACfyamxd1An/ezYs4gY9388RO4HPdPJkT+Do3T+AEvsfNAzuB73XzYE7gcdyTE+DHGmBqgKkBpgaYGmBqgKkBpgaYbk7gn074bze8rRP+nxveygl/xA0v7YQ/44aXc8JHueElnPAZbnhaJ3y2G57KCV/phod3wne54SGd8AhueBgnPJobvtUJj+yGL3fCs7jhy5zwbG74VCc8sxs+3AmvouFDnfBKGj7MCa+mAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaYGmBpgaoCpAaZ/AIToBWNS+TahAAAAAElFTkSuQmCC\",\"isMainImage\":true}]}}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/warehouse",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"warehouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book sqm or pallet at warehouse",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var bookpallet = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"The warehouse ID is displayed \", function () {\r",
+									"  pm.expect(bookpallet.warehouseId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The service is displayed \", function () {\r",
+									"  pm.expect(bookpallet.service).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The quantity is displayed \", function () {\r",
+									"  pm.expect(bookpallet.quantity).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The price is displayed \", function () {\r",
+									"  pm.expect(bookpallet.price).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchantibk}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"r7Ah-EL\",\r\n    \"term\":12,\r\n    \"service\":\"squareMeterStorage\",\r\n    \"quantity\":\"10\",\r\n    \"redirectUrl\":\"https://api-dev.warenext.ng/warehousePage/r7Ah-EL\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/warehouse/payment/initialise",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"warehouse",
+								"payment",
+								"initialise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get spaces left",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var palletspace = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"The space available in the pallet is displayed \", function () {\r",
+									"  pm.expect(palletspace.palletSpaceAvailable).to.not.be.null\r",
+									"});\r",
+									"pm.test(\"The total pallet space available in the warehouse is displayed \", function () {\r",
+									"  pm.expect(palletspace.totalPalletSpaceInWarehouse).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenwarehouse2}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/warehouse/space-left/r7Ah-EL",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"warehouse",
+								"space-left",
+								"r7Ah-EL"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get warehouse bookings details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var bookings = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"The old state is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.state.oldState).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The new state is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.state.newState).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The old location of stored pallet is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.location.oldLocation).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The new location of stored pallet is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.location.newLocation).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The type of goods is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.goods.type).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The pallet ID is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The number of squaremeter is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.sqm).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The present state is displayed \", function () {\r",
+									"  pm.expect(bookings.items.pallets.history.state).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenwarehouse}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/bookings/warehouse/Fgv3-TG",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"bookings",
+								"warehouse",
+								"Fgv3-TG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get warehouse fulfillment details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenwarehouse}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/fulfillment/warehouse/Fgv3-TG",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"fulfillment",
+								"warehouse",
+								"Fgv3-TG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get warehouse shipment details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Valid response with status code 200\", function () {\r",
+									"     pm.response.to.have.status(200);\r",
+									"     pm.response.to.be.ok\r",
+									"});\r",
+									"\r",
+									"var shipments = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.test(\"The user ID is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.userId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The old state is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.state.oldState).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The new state is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.state.newState).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The old location of stored pallet is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.location.oldLocation).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The new location of stored pallet is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.location.newLocation).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The item ID is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.goods.items.itemId).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The type of goods is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.goods.type).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The pallet ID is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.id).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The origin is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.origin).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The warehouse details is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.warehouse).to.not.be.null\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The merchant details is displayed \", function () {\r",
+									"  pm.expect(incoming.pallet.history.merchant).to.not.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authtokenwarehouse}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/shipments/warehouse/Fgv3-TG",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"shipments",
+								"warehouse",
+								"Fgv3-TG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list warehouses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenwarehouse}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/warehouses?limit=100&offset=0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"warehouses"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "warehouse details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenwarehouse}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/warehouse/Fgv3-TG",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"warehouse",
+								"Fgv3-TG"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GOKADA",
+			"item": [
+				{
+					"name": "get estimates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\"pickup_address\": \"Vita Towers, Kofo Abayomi Street, Lagos, Nigeria\",\r",
+									"        \"pickup_latitude\": \"6.435275500000001\",\r",
+									"        \"pickup_longitude\": \"3.4147874\",\r",
+									"        \"delivery_address\": \"21 Lugard Avenue, Lagos, Nigeria\",\r",
+									"        \"delivery_latitude\": \"6.456150699999999\",\r",
+									"        \"delivery_longitude\": \"3.4298536\",\r",
+									"        \"pickup_name\": \"Foo\",\r",
+									"        \"pickup_phone\": \"+23412345678\",\r",
+									"        \"pickup_email\": \"example@about.com\",\r",
+									"        \"delivery_name\": \"Bar\",\r",
+									"        \"delivery_phone\": \"+2341234567891\",\r",
+									"        \"delivery_email\": \"example+1@about.com\",\r",
+									"        \"description\": \"Food delivery\"\r",
+									"    }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"pickup_latitude\": \"6.435275500000001\",\r\n        \"pickup_longitude\": \"3.4147874\",\r\n        \"delivery_latitude\": \"6.456150699999999\",\r\n        \"delivery_longitude\": \"3.4298536\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.gokada.ng/api/developer/order_estimate?api_key=u18c9vfb3tnzqOm7iKnkzTroxj3hnQX5AY9ujyP9uEh1YZcpQMk9qa39HUoq",
+							"protocol": "https",
+							"host": [
+								"api",
+								"gokada",
+								"ng"
+							],
+							"path": [
+								"api",
+								"developer",
+								"order_estimate"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "u18c9vfb3tnzqOm7iKnkzTroxj3hnQX5AY9ujyP9uEh1YZcpQMk9qa39HUoq"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"api_key\": \"u18c9vfb3tnzqOm7iKnkzTroxj3hnQX5AY9ujyP9uEh1YZcpQMk9qa39HUoq\",\r\n   \"pickup_address\": \"Vita Towers, Kofo Abayomi Street, Lagos, Nigeria\",\r\n  \"pickup_latitude\": \"6.435275500000001\",\r\n  \"pickup_longitude\": \"3.4147874\",\r\n  \"delivery_address\": \"21 Lugard Avenue, Lagos, Nigeria\",\r\n  \"delivery_latitude\": \"6.456150699999999\",\r\n  \"delivery_longitude\": \"3.4298536\",\r\n  \"pickup_name\": \"Foo\",\r\n  \"pickup_phone\": \"+23412345678\",\r\n  \"pickup_email\": \"example@about.com\",\r\n  \"delivery_name\": \"Bar\",\r\n  \"delivery_phone\": \"+2341234567891\",\r\n  \"delivery_email\": \"example+1@about.com\",\r\n  \"description\": \"Food delivery\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.gokada.ng/api/developer/order_create?api_key=u18c9vfb3tnzqOm7iKnkzTroxj3hnQX5AY9ujyP9uEh1YZcpQMk9qa39HUoq",
+							"protocol": "https",
+							"host": [
+								"api",
+								"gokada",
+								"ng"
+							],
+							"path": [
+								"api",
+								"developer",
+								"order_create"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "u18c9vfb3tnzqOm7iKnkzTroxj3hnQX5AY9ujyP9uEh1YZcpQMk9qa39HUoq"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"FFFXY-426043\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.gokada.ng/api/developer/order_status?api_key=u18c9vfb3tnzqOm7iKnkzTroxj3hnQX5AY9ujyP9uEh1YZcpQMk9qa39HUoq",
+							"protocol": "https",
+							"host": [
+								"api",
+								"gokada",
+								"ng"
+							],
+							"path": [
+								"api",
+								"developer",
+								"order_status"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "u18c9vfb3tnzqOm7iKnkzTroxj3hnQX5AY9ujyP9uEh1YZcpQMk9qa39HUoq"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "merchant create order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pickupDate\": \"12/12/2020\",\"pickupTime\": \"12:02 AM\",\"locationFrom\": {\"country\": \"Nigeria\",\"state\": \"Lagos\",\"city\": \"ikeja\",\"zone\": \"ikeja\",\"address\": \"address\",\"contactName\": \"ware next\",\"contactNumber\": \"+2347063560000\",\"coords\":{\"lat\":6.435275500000001,\"lng\":3.4147874}},\"locationTo\": {\"country\": \"Nigeria\",\"state\": \"Lagos\",\"city\": \"ikeja\",\"zone\": \"ikeja\",\"address\": \"address\",\"contactName\": \"ware next\",\"contactNumber\": \"+2347063560000\",\"coords\":{\"lat\":6.456150699999999,\"lng\":3.4298536}},\"documents\": [],\"details\": {\"vehicleQuantity\": 3,\"vehicleType\": \"motorbike\",\"products\": [{\"type\": \"Heavy Package\",\"weight\": 5,\"quantity\": 2,\"name\": \"name of product\",\"description\": \"description\",\"variant\": \"variant 2\"}]},\"deliveryPartner\": [\"aRbEWt5glOcodzRTYMSk\"],\"paymentInformation\": {}}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/truckerJob",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"truckerJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobV1/TRJ-DfqjPM",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobV1",
+								"TRJ-DfqjPM"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "track order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/delivery/track/TRJ-274O2X",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"delivery",
+								"track",
+								"TRJ-274O2X"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shipment pricing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"locationFrom\": [ { \"country\": \"Nigeria\", \"state\": \"Lagos\",\"city\": \"Ikeja\", \"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\", \"zone\": \"Ikeja\", \"coords\": { \"lat\": 6.4352756, \"lng\": 3.4147873 } } ], \"locationTo\": [ { \"country\": \"Nigeria\", \"state\": \"Lagos\", \"city\": \"Lekki\", \"address\": \"33 Bisola Durosinmi Etti Drive, Lekki, Nigeria\", \"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\", \"coords\": { \"lat\": 6.4561505, \"lng\": 3.4298537 } } ], \"details\": { \"vehicleQuantity\": 1, \"vehicleType\": \"motorbike\", \"truckType\": \"\", \"truckWeight\": \"\", \"products\": [ { \"type\": \"Documents\", \"weight\": \"2\", \"quantity\": 1, \"description\": \"\"}] }}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/getShipmentPricing",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"getShipmentPricing"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FULFILLMENT",
+			"item": [
+				{
+					"name": "create fulfillment without LP",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokendemomerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"warehouseId\":\"Fgv3-TG\",\"products\":[{\"inventoryItemId\":\"INVxuY-4ae-3RU\",\"type\":\"Cable clips 12mm (Tower)\",\"quantity\":2},{\"inventoryItemId\":\"INVjZ1-FsV-ncl\",\"type\":\"test\",\"quantity\":1}]}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/fulfillment/Fgv3-TG",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"fulfillment",
+								"Fgv3-TG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create fulfillment with LP",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokendemomerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"warehouseId\":\"Fgv3-TG\",\"products\":[{\"inventoryItemId\":\"INVxEB-pnk-UO8\",\"type\":\"GSM Module (PCBA)\",\"quantity\":0}],\"locationTo\":{\"state\":\"Lagos\",\"city\":\"Lekki\",\"address\":\"20 Layi Yusuf Cresent, Lekki, Nigeria\"},\"deliveryPartner\":[\"VV8Pc8oGkzSobUMVxtQu\"],\"paymentInformation\":{\"price\":1000,\"method\":\"card\"},\"partnerDeliveryCode\":\"0\",\"pickupDate\":\"1/25/2021\",\"pickupTime\":\"2:30:00 PM\",\"jobId\":\"TRJ-zchtNf\"}"
+						},
+						"url": {
+							"raw": "{{baseurl}}/v1/fulfillment/Fgv3-TG",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"v1",
+								"fulfillment",
+								"Fgv3-TG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenwarehouse}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INVENTORY",
+			"item": [
+				{
+					"name": "create inventory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/inventory/merchant?sku=AZ00013&name=biro&category=education&unitOfMeasurement=Kg",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"inventory",
+								"merchant"
+							],
+							"query": [
+								{
+									"key": "sku",
+									"value": "AZ00013"
+								},
+								{
+									"key": "name",
+									"value": "biro"
+								},
+								{
+									"key": "category",
+									"value": "education"
+								},
+								{
+									"key": "unitOfMeasurement",
+									"value": "Kg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get inventory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/inventory/merchant",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"inventory",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list MY  inventory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"MCHNT5YFp-Nz-rG\r",
+									"MCHNTcROP-zG-ow"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/palletStorage/inventory?merchantId=MCHNT5YFp-Nz-rG",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"palletStorage",
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "merchantId",
+									"value": "MCHNT5YFp-Nz-rG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list inventory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"MCHNT5YFp-Nz-rG\r",
+									"MCHNTcROP-zG-ow"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenwarehouse}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/palletStorage/inventory",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"palletStorage",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin list inventory for merchant",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenadmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/admin/inventory/merchant/:userId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"admin",
+								"inventory",
+								"merchant",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "O2OcL3jL87SZgodullzs",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DRAFTS",
+			"item": [
+				{
+					"name": "create draft",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"pickupDate\": \"12/12/2021\",\r\n\t\"pickupTime\": \"12:02 AM\",\r\n\t\"locationFrom\": [\r\n\t\t{\r\n\t\t\t\"address\": {\r\n\t\t\t\t\"country\": \"Nigeria\",\r\n\t\t\t\t\"state\": \"Lagos\",\r\n\t\t\t\t\"city\": \"Ikeja\",\r\n\t\t\t\t\"closestLandmark\":\"computer village\",\r\n\t\t\t\t\"address\": \"12 Sobo Arobiodu Street, Ikeja, Nigeria\",\r\n\t\t\t\t\"zone\": \"Ikeja\",\r\n\t\t\t\t\"coords\": {\r\n\t\t\t\t\"lat\": 6.5757504,\r\n\t\t\t\t\"lng\": 3.3510988\r\n\t\t\t\t},\r\n\t\t\t\t\"contactName\": \"ware next\",\r\n\t\t\t\t\"contactNumber\": \"+2347063560000\"\r\n\t\t\t},\r\n\t\t\t\"products\": [\r\n\t\t\t\t{\r\n\t\t\t\t\"type\": \"Documents\",\r\n\t\t\t\t\"weight\": \"2\",\r\n\t\t\t\t\"quantity\": 2,\r\n\t\t\t\t\"description\": \"\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"locationTo\": [\r\n\t\t{\r\n\t\t\t\"address\": {\r\n\t\t\t\t\"country\": \"Nigeria\",\r\n\t\t\t\t\"state\": \"Lagos\",\r\n\t\t\t\t\"city\": \"Lekki\",\r\n\t\t\t\t\"closestLandmark\":\"The place\",\r\n\t\t\t\t\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\r\n\t\t\t\t\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\t\t\t\t\"coords\": {\r\n\t\t\t\t\"lat\": 6.4384494,\r\n\t\t\t\t\"lng\": 3.4545062\r\n\t\t\t\t},\r\n\t\t\t\t\"contactName\": \"ware next\",\r\n\t\t\t\t\"contactNumber\": \"+2347063560000\"\r\n\t\t\t},\r\n\t\t\t\"products\": [\r\n\t\t\t\t{\r\n\t\t\t\t\"type\": \"Documents\",\r\n\t\t\t\t\"weight\": \"2\",\r\n\t\t\t\t\"quantity\": 2,\r\n\t\t\t\t\"description\": \"\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"address\": {\r\n\t\t\t\t\"country\": \"Nigeria\",\r\n\t\t\t\t\"state\": \"Lagos\",\r\n\t\t\t\t\"city\": \"Lekki\",\r\n\t\t\t\t\"closestLandmark\":\"The place\",\r\n\t\t\t\t\"address\": \"20 Layi Yusuf Cresent, Lekki, Nigeria\",\r\n\t\t\t\t\"zone\": \"VI/Lekki Phase 1/Lagos Island/Ikoyi\",\r\n\t\t\t\t\"coords\": {\r\n\t\t\t\t\"lat\": 6.4384494,\r\n\t\t\t\t\"lng\": 3.4545062\r\n\t\t\t\t},\r\n\t\t\t\t\"contactName\": \"ware next\",\r\n\t\t\t\t\"contactNumber\": \"+2347063560000\"\r\n\t\t\t},\r\n\t\t\t\"products\": [\r\n\t\t\t\t{\r\n\t\t\t\t\"type\": \"Documents\",\r\n\t\t\t\t\"weight\": \"2\",\r\n\t\t\t\t\"quantity\": 2,\r\n\t\t\t\t\"description\": \"\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"details\": {\r\n\t\t\"vehicleQuantity\": 1,\r\n\t\t\"vehicleType\": \"motorbike\",\r\n\t\t\"truckType\": \"\",\r\n\t\t\"truckWeight\": \"\",\r\n\t\t\"products\": [\r\n\t\t\t{\r\n\t\t\t\t\"type\": \"Documents\",\r\n\t\t\t\t\"weight\": \"2\",\r\n\t\t\t\t\"quantity\": 2,\r\n\t\t\t\t\"description\": \"\"\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"deliveryPartner\": [\r\n\t\t\"xZivkwgfKAamCXTb3C9m\"\r\n\t],\r\n\t\"paymentInformation\": {\r\n\t\t\"method\": \"cash\",\r\n\t\t\"status\": \"success\",\r\n\t\t\"price\": 6000\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/truckerJob/draft",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJob",
+								"draft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list draft",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobs/drafts",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobs",
+								"drafts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete draft",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authtokenmerchant}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/truckerJobs/draft/:jobId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"truckerJobs",
+								"draft",
+								":jobId"
+							],
+							"variable": [
+								{
+									"key": "jobId",
+									"value": "TRJ-wfUNi7",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
